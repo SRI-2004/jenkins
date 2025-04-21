@@ -17,6 +17,24 @@ repositories {
     mavenCentral()
 }
 
+
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            from(components["java"])
+        }
+    }
+    repositories {
+        maven {
+            url = uri("https://trial3lah5w.jfrog.io/artifactory/libs-release-local")
+            credentials {
+                username = findProperty("artifactory_user") as String? ?: ""
+                password = findProperty("artifactory_password") as String? ?: ""
+            }
+        }
+    }
+}
+
 dependencies {
     // Use JUnit Jupiter for testing.
     testImplementation(libs.junit.jupiter)

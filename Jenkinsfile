@@ -6,14 +6,14 @@ pipeline {
     }
 
     environment {
-        ARTIFACTORY_USER = credentials('jfrog-username')
-        ARTIFACTORY_PASSWORD = credentials('jfrog-username')
+        ARTIFACTORY_USER = credentials('jfrog-user')
+        ARTIFACTORY_PASSWORD = credentials('jfrog-trial3lah5w')
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'develop', url: 'https://github.com/<your-org>/<repo>.git'
+                git branch: 'develop', url: 'https://github.com/SRI-2004/jenkins.git'
             }
         }
 

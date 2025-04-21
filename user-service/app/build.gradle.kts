@@ -11,6 +11,23 @@ plugins {
     id("java")
     id("maven-publish")
 }
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            from(components["java"])
+        }
+    }
+    repositories {
+        maven {
+            url = uri("https://trial3lah5w.jfrog.io/artifactory/libs-release-local")
+            credentials {
+                username = findProperty("artifactory_user") as String? ?: ""
+                password = findProperty("artifactory_password") as String? ?: ""
+            }
+        }
+    }
+}
+
 
 repositories {
     // Use Maven Central for resolving dependencies.
