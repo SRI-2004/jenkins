@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        gradle 'Gradle 8.14-rc-2' // Use the name set in Global Tool Config
+        gradle 'Gradle 7+' // Use the name set in Global Tool Config
     }
 
     environment {
