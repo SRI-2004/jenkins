@@ -12,8 +12,4 @@ public class App {
         System.out.println(new App().getGreeting());
     }
 }
-public class UserService {
-    public String getUser() {
-        return "User from login flow";
-    }
-}
+
