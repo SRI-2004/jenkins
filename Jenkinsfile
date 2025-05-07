@@ -6,7 +6,7 @@ pipeline {
     }
 
     environment {
-        ARTIFACTORY_CREDENTIALS = credentials('jfrog-creds')  // your Jenkins credential ID
+        ARTIFACTORY_CREDENTIALS = credentials('jfrog-cr')  // your Jenkins credential ID
     }
 
     stages {
