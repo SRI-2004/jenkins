@@ -26,16 +26,17 @@ pipeline {
         stage('Publish to Artifactory') {
             steps {
                 sh '''
-                    ./user-service/gradlew -p user-service publish \
-                    -Partifactory_user=$ARTIFACTORY_CREDENTIALS_USR \
-                    -Partifactory_password=$ARTIFACTORY_CREDENTIALS_PSW
+                ./user-service/gradlew -p user-service publish \
+                -Partifactory_user="$ARTIFACTORY_CREDENTIALS_USR" \
+                -Partifactory_password="$ARTIFACTORY_CREDENTIALS_PSW"
                 '''
                 sh '''
-                    ./order-service/gradlew -p order-service publish \
-                    -Partifactory_user=$ARTIFACTORY_CREDENTIALS_USR \
-                    -Partifactory_password=$ARTIFACTORY_CREDENTIALS_PSW
+                ./order-service/gradlew -p order-service publish \
+                -Partifactory_user="$ARTIFACTORY_CREDENTIALS_USR" \
+                -Partifactory_password="$ARTIFACTORY_CREDENTIALS_PSW"
                 '''
             }
         }
+
     }
 }
