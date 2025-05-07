@@ -21,7 +21,7 @@ publishing {
     }
     repositories {
     maven {
-        val repoUrl = findProperty("repoUrl") as String? ?: "https://trialmd874m.jfrog.io/artifactory/api/maven/devops-test"
+        val repoUrl = findProperty("repoUrl") as String? ?: "https://trialmd874m.jfrog.io/artifactory/devops-test"
         println("🚀 Using publish URL: $repoUrl")
         url = uri(repoUrl)
         credentials {
