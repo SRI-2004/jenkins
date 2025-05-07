@@ -20,14 +20,17 @@ publishing {
         }
     }
     repositories {
-        maven {
-            url = uri("https://trial3lah5w.jfrog.io/artifactory/libs-release-local")
-            credentials {
-                username = findProperty("artifactory_user") as String? ?: ""
-                password = findProperty("artifactory_password") as String? ?: ""
-            }
+    maven {
+        val repoUrl = findProperty("repoUrl") as String? ?: "https://trialmd874m.jfrog.io/artifactory/api/maven/devops-test"
+        println("🚀 Using publish URL: $repoUrl")
+        url = uri(repoUrl)
+        credentials {
+            username = findProperty("artifactory_user") as String? ?: ""
+            password = findProperty("artifactory_password") as String? ?: ""
         }
     }
+    }
+
 }
 
 
